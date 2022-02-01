@@ -73,14 +73,8 @@ class MH:
 
 
 @njit
-def minimizers(Y, S):
-    return np.array([i + np.argmin(Y[i:i + S]) for i in range(0, len(Y) - S, S)])
-
-
-
-@njit
-def minimizers(Y, S):
-    return np.array([i + np.argmin(Y[i:i + S]) for i in range(0, len(Y) - S, S)])
+def minimizers(y, s):
+    return np.array([i + np.argmin(y[i:i + s]) for i in range(0, len(y) - s, s)])
 
 
 @jitclass([
